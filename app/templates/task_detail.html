@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Задача №{{ task.id }}{% endblock %}
+{% block content %}
+
+    <h1>Задача №{{ task.id }}</h1>
+ 
+    <table class="table table-success mt-3">
+        <thead>
+            <tr>
+                <th scope="col">Заголовок</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.date|format_datetime }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">
+        На главную
+    </a>
+
+{% endblock %}

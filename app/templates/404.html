@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Ошибка 404{% endblock %}
+{% block content %}
+
+    <div class="alert alert-primary mt-3" role="alert">
+        Страница <code>{{ path }}</code> не найдена.
+    </div>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">
+        На главную
+    </a>
+
+{% endblock %}
